@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "test": "mocha",
+    "test": "mocha --recursive test",
     "start": "nodemon server.js"
   },
   "author": "",
