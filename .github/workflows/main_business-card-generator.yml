@@ -57,5 +57,5 @@ jobs:
         with:
           app-name: 'Business-Card-Generator'
           slot-name: 'Production'
-          package: ./dist/Business-Card-Generator
+          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A028EF3C13284BE480BDF0E102B187BB }}
