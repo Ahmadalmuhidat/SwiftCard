@@ -19,8 +19,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '18-lts'
-
+          node-version: '20.x'
 
       - name: npm install, build, and test
         run: |
@@ -60,4 +59,4 @@ jobs:
           app-name: 'Business-Card-Generator'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_54030B1F0A024A69A702D66B96323498 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A028EF3C13284BE480BDF0E102B187BB }}
