@@ -10,36 +10,63 @@
 
 <body>
   <div class="container">
-    <h2>Contact Form</h2>
+    <h2>Business Card Generator</h2>
     <form
+      id="contactForm"
       action="/generate"
       method="POST"
       enctype="multipart/form-data"
     >
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="FullName" required>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="FullName" placeholder="Ahmad Almuhidat" required>
 
       <label for="email">Email:</label>
-      <input type="email" id="email" name="Email" required>
+      <input type="email" id="email" name="Email" placeholder="ahmad.almuhidat@gmail.com" required>
 
       <label for="company">Company:</label>
-      <input type="text" id="company" name="Company" required>
+      <input type="text" id="company" name="Company" placeholder="Google LLC" required>
 
       <label for="position">Position:</label>
-      <input type="text" id="position" name="Position" required>
+      <input type="text" id="position" name="Position" placeholder="Software Engineer" required>
 
       <label for="address">Address:</label>
-      <input type="text" id="address" name="Address" required>
+      <input type="text" id="address" name="Address" placeholder="Amman, Jordan" required>
 
       <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="Phone" required>
+      <input type="tel" id="phone" name="Phone" placeholder="+962 000000000" required>
 
-      <label for="logo">Logo Image:</label>
+      <label for="logo">Company Logo (white background):</label>
       <input type="file" id="logo" name="logo" accept="image/*">
 
       <input type="submit" value="generate">
     </form>
   </div>
-</body>
 
+  <footer>
+    <p>&copy; 2024 Ahmad Almuhidat. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(this);
+
+      fetch('/generate', {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => response.text())
+      .then(text => {
+        if (text.trim() === 'true') alert('Information submitted successfully, please check your inbox');
+        else alert('There was an error submitting the information.');
+      })
+      .catch(error => {
+        alert('There was an error submitting the information.');
+        console.error('Error:', error);
+      });
+    });
+  </script>
+
+</body>
 </html>
