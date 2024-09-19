@@ -1,14 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const multer = require('multer');
-
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
+const CardGenerator = require("../controllers/CardController");
+const info = require("../middlewares/InfoValidator")
 
-const generator = require("../modals/card")
-
-router.post('/generate', upload.single('logo'), (req, res) => {
-  generator.generateCard(req, res, req.file);
+router.post('/generate', info, upload.single('logo'), (req, res) => {
+  CardGenerator.CardController(req, res, req.file);
 });
 
 router.get('/', (req, res) => {

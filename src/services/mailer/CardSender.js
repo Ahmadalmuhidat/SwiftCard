@@ -7,32 +7,35 @@ let transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: "lifemakers272@gmail.com",
-    pass: "dkob zrhq rzue dlke"
+    user: "",
+    pass: ""
   }
 });
 
 module.exports = {
-  sendEmail: (EmailAddress, StudentName, Card) => {
-    const htmlFilePath = path.join(__dirname, 'html', 'CardSender.html');
+  SendEmail: (EmailAddress, StudentName, CardBuffer) => {
+    const htmlFilePath = path.join(
+      __dirname,
+      "html",
+      "CardSender.html"
+    );
     const htmlContent = fs.readFileSync(
       htmlFilePath,
       'utf8'
     )
-    .replace("[Student Name]", StudentName)
-    .replace("[School/University Name]", "KAUST");
+    .replace("[Full Name]", StudentName)
 
-    const subject = "You Digital Card is Ready";
+    const subject = "You Digital Business is Ready";
 
     let mailOptions = {
-      from: "lifemakers272@gmail.com",
+      from: "",
       to: EmailAddress,
       subject: subject,
       html: htmlContent,
       attachments: [
         {
-          filename: 'student_card.pkpass',
-          content: Card
+          filename: 'card.pkpass',
+          content: CardBuffer
         }
       ]
     };
