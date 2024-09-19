@@ -25,7 +25,7 @@ module.exports = {
     )
     .replace("[Full Name]", StudentName)
 
-    const subject = "You Digital Business is Ready";
+    const subject = "You Digital Business Card is Ready";
 
     let mailOptions = {
       from: "",
