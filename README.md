@@ -1,4 +1,4 @@
-# Digital Business Card Generator
+# SwiftCard Business Digital Card Generator
 This project is a **Node.js MVC (Model-View-Controller)** application that allows users to create, customize, and generate **digital business cards** that can be saved directly into **Apple Wallet**. The application provides a user-friendly interface for designing business cards, and the backend processes these cards into the `.pkpass` format required by Apple Wallet.
 
 ## Features
