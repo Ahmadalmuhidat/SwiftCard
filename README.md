@@ -39,10 +39,3 @@ This project is a **Node.js MVC (Model-View-Controller)** application that allow
 3. Upload your company logo and make sure the background is white.
 4. Generate your digital business card and click on the .pkpass file.
 5. Add it to your Apple Wallet.
-
-## API Endpoints
-- POST /generate: Generate a digital business card.
-- GET /: Will take you to the home page.
-
-## Contributing
-Contributions are welcome! If you have any ideas or improvements, please open an issue or submit a pull request.
